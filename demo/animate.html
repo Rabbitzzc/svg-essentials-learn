@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <svg>
+        <!-- 基本动画 -->
+        <rect x="10" y="10" width="200" height="200" stroke="black" fill="none">
+            <animate attributeType="XML" attributeName="width" from="200" to="20" begin="0s" dur="5s" repeatCount=""
+                fill="freeze" />
+        </rect>
+        <!-- 同步动画 -->
+        <circle cx="60" cy="60" r="30" style="fille:gray;stroke:blueviolet;">
+            <animate id="s1" attributeType="XML" attributeName="r" from="30" to="10" begin="0s" dur="4s" repeatCount="" fill="freeze" />
+        </circle>
+        
+        <circle cx="120" cy="60" r="10" style="fille:gray;stroke:blueviolet;">
+            <animate attributeType="XML" attributeName="r" from="10" to="30" begin="s1.end" dur="4s" repeatCount="" fill="freeze" />
+        </circle>
+
+        <!-- set 动画 -->
+        <text x="60" y="60" style="visibility: hidden;">
+            HHHH
+            <set attributeName="visibility" attributeType="CSS" to="visible" begin="3s" dur="1s" fill="freeze"></set>
+        </text>
+    </svg>
+
+</body>
+
+</html>
